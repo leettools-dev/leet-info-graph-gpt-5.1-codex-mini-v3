@@ -13,13 +13,16 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-*Features will be documented here as they are implemented.*
+### Backend Skeleton
+- FastAPI service with health endpoint and structured router architecture.
+- Click-based CLI for running the backend service.
 
 ## Getting Started
 
 ### Prerequisites
 
-*Prerequisites will be documented here.*
+- Python 3.11+
+- Install dependencies via `pip install -e backend[all]`
 
 ### Installation
 
