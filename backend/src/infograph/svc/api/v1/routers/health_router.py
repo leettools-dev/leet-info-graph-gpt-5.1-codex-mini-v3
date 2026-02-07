@@ -1,4 +1,4 @@
-from backend.src.infograph.svc.api_router_base import APIRouterBase
+from infograph.svc.api_router_base import APIRouterBase
 
 
 health_router = APIRouterBase()
