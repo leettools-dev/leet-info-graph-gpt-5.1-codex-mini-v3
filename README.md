@@ -13,9 +13,10 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-### Backend Skeleton
 - FastAPI service with health endpoint and structured router architecture.
 - Click-based CLI for running the backend service.
+- Vite + Vue 3 frontend scaffolded with router placeholders for Login, Chat, and History.
+- Axios helper configured to talk to the backend along with health-check status display.
 
 ## Getting Started
 
