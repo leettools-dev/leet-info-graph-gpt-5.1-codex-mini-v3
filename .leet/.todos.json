@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "id": "frontend-skeleton",
+      "content": "Implement the frontend skeleton: configure TailwindCSS + Element Plus, define router with placeholder Login/Chat/History pages, and apply the new structure to App.vue.",
+      "status": "in_progress",
+      "background": "goal 2",
+      "dependencies": [],
+      "suggested_solutions": [],
+      "goal_id": null,
+      "branch": null
+    },
+    {
+      "id": "frontend-health",
+      "content": "Create shared utilities including Axios request helper configured with backend base URL and integrate a health check that reflects connection status in the UI.",
+      "status": "pending",
+      "background": null,
+      "dependencies": [],
+      "suggested_solutions": [],
+      "goal_id": null,
+      "branch": null
+    },
+    {
+      "id": "frontend-readme",
+      "content": "Update README documentation to describe the frontend setup, dependencies, and how to run the dev server.",
+      "status": "pending",
+      "background": null,
+      "dependencies": [],
+      "suggested_solutions": [],
+      "goal_id": null,
+      "branch": null
+    }
+  ]
+}
