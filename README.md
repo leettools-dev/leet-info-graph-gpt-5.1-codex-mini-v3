@@ -13,18 +13,16 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-- FastAPI service with health endpoint and structured router architecture.
-- Click-based CLI for running the backend service.
-- Vite + Vue 3 frontend scaffolded with router placeholders for Login, Chat, and History.
-- Axios helper configured to talk to the backend along with health-check status display.
+- TailwindCSS + Element Plus UI scaffolding with router-ready pages and global styles for the Research Infograph Assistant frontend.
+- Axios request helper configured for the backend along with baseline health-check logic to surface backend status.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.11+
-- Install dependencies via `pip install -e backend[all]`
-
+- Node 18+ and npm 10+ to run the frontend dev server.
+- Install dependencies via `npm install` inside the `frontend` directory.
+- Python 3.11+ with backend dependencies from `backend[all]`.
 ### Installation
 
 ```bash
@@ -34,6 +32,19 @@ and receive AI-generated infographics wit...
 ### Usage
 
 ```bash
+# Start the backend service
+cd backend
+pip install -e .[test]
+python -m infograph.svc.main --port 8000
+```
+
+```bash
+# Start the frontend dev server
+cd frontend
+npm install
+npm run dev
+```
+
 # Usage examples will be added
 ```
 
@@ -44,6 +55,10 @@ See .leet/.todos.json for the current development status.
 ## Testing
 
 ```bash
+# Backend tests
+docker run --rm -v "$(pwd)/backend:/app" -w /app python:3.11 bash -c "pip install -e .[test] && pytest tests/ -v"
+```
+
 # Test instructions will be added
 ```
 
