@@ -13,10 +13,10 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-### Backend Skeleton
-- FastAPI service with health endpoint and structured router architecture.
-- Click-based CLI for running the backend service.
-
+### Backend skeleton
+- Implements CLI with Click in `infograph.svc.main`
+- Sets up FastAPI app and CORS middleware
+- Adds health endpoint via router in `infograph.svc.api.v1`
 ## Getting Started
 
 ### Prerequisites
