@@ -1,8 +1,8 @@
 {
   "todos": [
     {
-      "id": "db-store-interfaces",
-      "content": "Define abstract store interfaces for user/session/source/infographic/message with shared base methods.",
+      "id": "duckdb-helper",
+      "content": "Implement DuckDB helper for store connections and table creation",
       "status": "pending",
       "background": null,
       "dependencies": [],
@@ -11,8 +11,8 @@
       "branch": null
     },
     {
-      "id": "duckdb-store-impl",
-      "content": "Implement DuckDB-backed store implementations that handle table creation and CRUD for each entity.",
+      "id": "store-interfaces",
+      "content": "Define abstract store interfaces for users and sessions",
       "status": "pending",
       "background": null,
       "dependencies": [],
@@ -21,8 +21,8 @@
       "branch": null
     },
     {
-      "id": "duckdb-store-tests",
-      "content": "Write pytest coverage validating CRUD operations for all DuckDB stores.",
+      "id": "store-implementation",
+      "content": "Create DuckDB-backed user and session stores with CRUD tests",
       "status": "pending",
       "background": null,
       "dependencies": [],

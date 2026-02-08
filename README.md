@@ -13,8 +13,8 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-- TailwindCSS + Element Plus UI scaffolding with router-ready pages and global styles for the Research Infograph Assistant frontend.
-- Axios request helper configured for the backend along with baseline health-check logic to surface backend status.
+- FastAPI backend skeleton with health endpoint and DuckDB data models.
+- Vue 3 frontend skeleton featuring TailwindCSS, Element Plus, Pinia, and router-ready placeholder pages.
 
 ## Getting Started
 
