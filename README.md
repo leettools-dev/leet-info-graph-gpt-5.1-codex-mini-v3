@@ -4,45 +4,105 @@
 
 ## Overview
 
-# Research Infograph Assistant - Project Goals
-
-## Overview
-
-Build a full-stack web application that lets users sign in with Google, submit research prompts, 
-and receive AI-generated infographics wit...
+The Research Infograph Assistant is a full-stack experiment that lets users sign in with Google, submit research prompts, and receive AI-generated infographics powered by FastAPI, Vue 3, DuckDB, and TailwindCSS. This repository contains the backend service skeleton and test coverage for the early health-check endpoint.
 
 ## Features
 
-*Features will be documented here as they are implemented.*
+- Added detailed backend dependency configuration and build system setup in `pyproject.toml` to support FastAPI, DuckDB, Google OAuth, and testing tooling.
 
 ## Getting Started
 
 ### Prerequisites
 
-*Prerequisites will be documented here.*
+- Documented env as above?
+### Quick Start
 
-### Installation
+1. Environment variables
+   ```bash
+   cat <<'EOF' > backend/.env
+   GOOGLE_CLIENT_ID=your-google-client-id
+   JWT_SECRET=your-jwt-secret
+   DATABASE_PATH=/workspace/data/duckdb
+   INFOGRAPHIC_PATH=/workspace/data/infographics
+   LOG_LEVEL=info
+   EOF
+
+   cat <<'EOF' > frontend/.env
+   VITE_API_BASE=http://localhost:8000
+   VITE_GOOGLE_CLIENT_ID=your-google-client-id
+   VITE_FRONTEND_PORT=3001
+   EOF
+   ```
+
+2. Bootstrap services
+   ```bash
+   chmod +x ./start.sh ./stop.sh
+   ./start.sh
+   ```
+   - Logs: `./logs/backend.log` & `./logs/frontend.log`
+   - PIDs: `./pids/backend.pid`, `./pids/frontend.pid`
+   - After startup, `start.sh` prints `Frontend available at http://localhost:3001`
+
+3. CLI quick intro
+   ```bash
+   ./start.sh         # start backend and frontend
+   ./stop.sh          # stop running services
+   tail -f logs/*.log # inspect backend/frontend logs
+   ```
+
+### Backend Setup
 
 ```bash
-# Installation instructions will be added
+cd backend
+pip install -e .[test]
+python -m infograph.svc.main --port 8000
 ```
 
-### Usage
+The service listens on `0.0.0.0:8000` and exposes the health route under `/api/v1/health`.
+
+### Frontend Setup
 
 ```bash
-# Usage examples will be added
+cd frontend
+npm install
+npm run dev
 ```
 
-## Development
+Once the frontend server is running, it can call the backend health endpoint to confirm connectivity.
 
-See .leet/.todos.json for the current development status.
+## Configuration
+
+### Backend
+
+Create a `.env` file with the following values before production runs:
+
+```
+GOOGLE_CLIENT_ID=your-google-client-id
+JWT_SECRET=your-jwt-secret
+DATABASE_PATH=/workspace/data/duckdb
+INFOGRAPHIC_PATH=/workspace/data/infographics
+LOG_LEVEL=info
+```
+
+### Frontend
+
+Set the client-side environment variables when running the UI:
+
+```
+VITE_API_BASE=http://localhost:8000
+VITE_GOOGLE_CLIENT_ID=your-google-client-id
+VITE_FRONTEND_PORT=3001
+```
 
 ## Testing
 
+### Testing
+
+Backend tests ensure the health endpoint behaves as expected:
+
 ```bash
-# Test instructions will be added
+cd backend
+pytest tests/test_health_router.py -q
 ```
 
-## License
-
-MIT
+`pytest` loads the FastAPI app via `infograph.svc.api_service.create_app` to keep the `/api/v1/health` router verified while features evolve.
