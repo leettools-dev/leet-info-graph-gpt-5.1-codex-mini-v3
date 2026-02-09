@@ -8,7 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added README instructions covering quick start scripts, logs/pids, and backend health check usage.
+- FastAPI backend exposes `/api/v1/health` which returns `{"status": "ok", "version": "1.0.0"}` for readiness checks.
+- `start.sh`/`stop.sh` orchestrate backend and frontend services, capturing logs in `./logs` and PID tracking in `./pids` for easy monitoring.
 ## Getting Started
 
 ### Prerequisites
