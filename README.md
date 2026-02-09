@@ -13,8 +13,7 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-- Backend skeleton with a health endpoint supporting version metadata
-
+test
 ## Getting Started
 
 ### Prerequisites
@@ -53,7 +52,7 @@ See .leet/.todos.json for the current development status.
 
 ## Testing
 
-```bash
+Not yet.
 # Backend tests
 docker run --rm -v "$(pwd)/backend:/app" -w /app python:3.11 bash -c "pip install -e .[test] && pytest tests/ -v"
 ```
