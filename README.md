@@ -13,16 +13,7 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-<<<<<<< HEAD
-- FastAPI backend skeleton with health endpoint and DuckDB data models.
-- Vue 3 frontend skeleton featuring TailwindCSS, Element Plus, Pinia, and router-ready placeholder pages.
-
-=======
-### Backend skeleton
-- Implements CLI with Click in `infograph.svc.main`
-- Sets up FastAPI app and CORS middleware
-- Adds health endpoint via router in `infograph.svc.api.v1`
->>>>>>> dev#feature#backend-skeleton
+Backend DuckDB stores for users, sessions, sources, messages, and infographics with abstract interfaces and schema-aligned implementations.
 ## Getting Started
 
 ### Prerequisites
