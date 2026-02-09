@@ -1,2 +1,0 @@
-{"timestamp":"2026-02-07T21:09:34.180104Z","event":"task-initiated","message":"Task 'workspace' initiated","metadata":{"plan_file":"task-workspace/plan.workspace.md"}}
-{"timestamp":"2026-02-07T21:09:34.602334Z","event":"subtasks-synced","message":"Synced 143 subtasks from plan","metadata":{"subtask_count":143}}
