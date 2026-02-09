@@ -1,6 +1,6 @@
 ---
 project_name: workspace
-updated_at: 2026-02-09T20:21:45.473182+00:00
+updated_at: 2026-02-09T20:23:56.705345+00:00
 status: in_progress
 ---
 
@@ -609,7 +609,7 @@ The plan store is the source of truth for planning and execution.
 - [x] Create `api_service.py` with FastAPI app, CORS middleware
 - [x] Create `health_router.py` with `/api/v1/health` endpoint
 - [x] Add `pyproject.toml` with dependencies
-- [ ] `python -m infograph.svc.main --port 8000` starts the server
+- [x] `python -m infograph.svc.main --port 8000` starts the server
 - [ ] `GET http://localhost:8000/api/v1/health` returns `{"status": "ok"}`
 - [ ] pytest test passes for health endpoint
 
