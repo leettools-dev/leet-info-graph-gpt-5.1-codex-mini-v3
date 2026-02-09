@@ -8,8 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- FastAPI backend exposes `/api/v1/health` which returns `{"status": "ok", "version": "1.0.0"}` for readiness checks.
-- `start.sh`/`stop.sh` orchestrate backend and frontend services, capturing logs in `./logs` and PID tracking in `./pids` for easy monitoring.
+- Added foundational backend and frontend structure for the Research Infograph Assistant (FastAPI + Vue 3 stack).
+
 ## Getting Started
 
 ### Prerequisites
