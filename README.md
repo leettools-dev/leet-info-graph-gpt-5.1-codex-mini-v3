@@ -8,10 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- **FastAPI health endpoint**: A minimal `/api/v1/health` route returns `{ "status": "ok", "version": "1.0.0" }` and demonstrates the router aggregation, middleware wiring, and response modeling that will guide future endpoints.
-- **CLI entrypoint**: `python -m infograph.svc.main --port 8000` boots the Uvicorn server so the backend can be reached from the frontend and automated tests.
-- **Test coverage**: A pytest suite verifies the health endpoint and ensures the FastAPI app is wired correctly for current and future features.
-
+- Backend skeleton with FastAPI service, CORS middleware, and Click CLI entry point
+- `/api/v1/health` endpoint returning status and version information
 ## Getting Started
 
 ### Prerequisites
