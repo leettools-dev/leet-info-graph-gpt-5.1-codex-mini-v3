@@ -8,7 +8,9 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Implemented Google OAuth login flow with backend token verification, JWT creation, and frontend auth state management.
+- Added Message schema to capture chat messages tied to research sessions.
+- Added abstract stores for user, session, source, infographic, and message entities to define a consistent data access layer.
+
 ## Getting Started
 
 ### Prerequisites
