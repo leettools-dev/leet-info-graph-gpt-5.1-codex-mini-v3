@@ -4,93 +4,72 @@
 
 ## Overview
 
-# Research Infograph Assistant - Project Goals
-
-## Overview
-
-Build a full-stack web application that lets users sign in with Google, submit research prompts, 
-and receive AI-generated infographics wit...
+The Research Infograph Assistant is a full-stack experiment that lets users sign in with Google, submit research prompts, and receive AI-generated infographics powered by FastAPI, Vue 3, DuckDB, and TailwindCSS. This repository contains the backend service skeleton and test coverage for the early health-check endpoint.
 
 ## Features
 
-- Feature: Research Infograph Assistant backend skeleton established with health endpoint.
-  - Usage: `python -m infograph.svc.main --port 8000` starts server.
-  - Configuration: Ensure env vars such as `JWT_SECRET` and `DATABASE_PATH` are set before running.
+- **FastAPI health endpoint**: A minimal `/api/v1/health` route returns `{ "status": "ok", "version": "1.0.0" }` and demonstrates the router aggregation, middleware wiring, and response modeling that will guide future endpoints.
+- **CLI entrypoint**: `python -m infograph.svc.main --port 8000` boots the Uvicorn server so the backend can be reached from the frontend and automated tests.
+- **Test coverage**: A pytest suite verifies the health endpoint and ensures the FastAPI app is wired correctly for current and future features.
 
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
-- Starting backend structure inspection.
-- Need to build backend FastAPI skeleton.
-- README update for planning
-
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
-- Starting backend structure inspection.
-- Need to build backend FastAPI skeleton.
-
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
-- Starting backend structure inspection.
-- Need to build backend FastAPI skeleton.
-
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
-- Starting backend structure inspection.
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
-- Starting backend structure inspection.
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
-## Feature: Initial Research Planning
-- Initial planning and branch setup in progress.
 ## Getting Started
 
 ### Prerequisites
 
-- Node 18+ and npm 10+ to run the frontend dev server.
-- Install dependencies via `npm install` inside the `frontend` directory.
-- Python 3.11+ with backend dependencies from `backend[all]`.
-### Installation
+- Python 3.11+ to run the backend service and tests.
+- Node 18+ and npm 10+ for the frontend development server (future work).
+
+### Backend Setup
 
 ```bash
-# Installation instructions will be added
-```
-
-### Usage
-
-```bash
-# Start the backend service
 cd backend
 pip install -e .[test]
 python -m infograph.svc.main --port 8000
 ```
 
+The service listens on `0.0.0.0:8000` and exposes the health route under `/api/v1/health`.
+
+### Frontend Setup
+
 ```bash
-# Start the frontend dev server
 cd frontend
 npm install
 npm run dev
 ```
 
-# Usage examples will be added
+Once the frontend server is running, it can call the backend health endpoint to confirm connectivity.
+
+## Configuration
+
+### Backend
+
+Create a `.env` file with the following values before production runs:
+
+```
+GOOGLE_CLIENT_ID=your-google-client-id
+JWT_SECRET=your-jwt-secret
+DATABASE_PATH=/workspace/data/duckdb
+INFOGRAPHIC_PATH=/workspace/data/infographics
+LOG_LEVEL=info
 ```
 
-## Development
+### Frontend
 
-See .leet/.todos.json for the current development status.
+Set the client-side environment variables when running the UI:
+
+```
+VITE_API_BASE=http://localhost:8000
+VITE_GOOGLE_CLIENT_ID=your-google-client-id
+VITE_FRONTEND_PORT=3001
+```
 
 ## Testing
 
-Not yet.
-# Backend tests
-docker run --rm -v "$(pwd)/backend:/app" -w /app python:3.11 bash -c "pip install -e .[test] && pytest tests/ -v"
+Backend tests ensure the health endpoint behaves as expected:
+
+```bash
+cd backend
+pytest tests/test_health_router.py -q
 ```
 
-# Test instructions will be added
-```
-
-## License
-
-MIT
+The suite exercises `infograph.svc.api_service.create_app` and the `/api/v1/health` router to keep the core skeleton stable as features are added.
