@@ -42,16 +42,20 @@ stop_existing_processes() {
 
 start_backend() {
   echo "Starting backend on port $BACKEND_PORT..."
-  (cd "$ROOT_DIR/backend" && $BACKEND_CMD --host 0.0.0.0 --port "$BACKEND_PORT" >>"$BACKEND_LOG_FILE" 2>&1 &)
+  pushd "$ROOT_DIR/backend" >/dev/null
+  $BACKEND_CMD --host 0.0.0.0 --port "$BACKEND_PORT" >>"$BACKEND_LOG_FILE" 2>&1 &
   local pid=$!
+  popd >/dev/null
   echo "$pid" >"$BACKEND_PID_FILE"
   echo "Backend pid: $pid"
 }
 
 start_frontend() {
   echo "Starting frontend on port $FRONTEND_PORT..."
-  (cd "$ROOT_DIR/frontend" && VITE_FRONTEND_PORT="$FRONTEND_PORT" VITE_API_BASE=${VITE_API_BASE:-http://localhost:$BACKEND_PORT} $FRONTEND_CMD >>"$FRONTEND_LOG_FILE" 2>&1 &)
+  pushd "$ROOT_DIR/frontend" >/dev/null
+  VITE_FRONTEND_PORT="$FRONTEND_PORT" VITE_API_BASE=${VITE_API_BASE:-http://localhost:$BACKEND_PORT} $FRONTEND_CMD >>"$FRONTEND_LOG_FILE" 2>&1 &
   local pid=$!
+  popd >/dev/null
   echo "$pid" >"$FRONTEND_PID_FILE"
   echo "Frontend pid: $pid"
 }

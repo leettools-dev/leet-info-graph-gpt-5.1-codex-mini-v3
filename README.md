@@ -8,8 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added detailed backend dependency configuration and build system setup in `pyproject.toml` to support FastAPI, DuckDB, Google OAuth, and testing tooling.
-
+- Added CLI startup validation for the backend service and verified health endpoint connectivity.
 ## Getting Started
 
 ### Prerequisites
@@ -19,20 +18,20 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 1. Environment variables
    ```bash
-   cat <<'EOF' > backend/.env
-   GOOGLE_CLIENT_ID=your-google-client-id
-   JWT_SECRET=your-jwt-secret
-   DATABASE_PATH=/workspace/data/duckdb
-   INFOGRAPHIC_PATH=/workspace/data/infographics
-   LOG_LEVEL=info
-   EOF
+cat <<'EOF' > backend/.env
+GOOGLE_CLIENT_ID=your-google-client-id
+JWT_SECRET=your-jwt-secret
+DATABASE_PATH=/workspace/data/duckdb
+INFOGRAPHIC_PATH=/workspace/data/infographics
+LOG_LEVEL=info
+EOF
 
-   cat <<'EOF' > frontend/.env
-   VITE_API_BASE=http://localhost:8000
-   VITE_GOOGLE_CLIENT_ID=your-google-client-id
-   VITE_FRONTEND_PORT=3001
-   EOF
-   ```
+cat <<'EOF' > frontend/.env
+VITE_API_BASE=http://localhost:8000
+VITE_GOOGLE_CLIENT_ID=your-google-client-id
+VITE_FRONTEND_PORT=3001
+EOF
+```
 
 2. Bootstrap services
    ```bash
