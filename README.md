@@ -8,9 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added Message schema to capture chat messages tied to research sessions.
-- Added abstract stores for user, session, source, infographic, and message entities to define a consistent data access layer.
-
+- Added initial DuckDB-backed stores plus schema-aware fixtures and tests that exercise CRUD flows for users, sessions, sources, messages, and infographics.
 ## Getting Started
 
 ### Prerequisites
