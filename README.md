@@ -8,17 +8,12 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Bootstrap scripts for backend and frontend (`start.sh`, `stop.sh`, logs, PID management, frontend URL output)
-- FastAPI service skeleton with `/api/v1/health` + Click CLI ($python -m infograph.svc.main$)
-
+- Summary of apiservice task
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.11+: required for backend development and running pytest.
-- Node 18+ & npm 10+: required for frontend development server.
-- Environment variables defined in `.env` files before running services.
-
+- Documented env as above?
 ### Quick Start
 
 1. Environment variables
