@@ -8,7 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Summary of apiservice task
+- Added detailed backend dependency configuration and build system setup in `pyproject.toml` to support FastAPI, DuckDB, Google OAuth, and testing tooling.
+
 ## Getting Started
 
 ### Prerequisites
