@@ -8,7 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Established the backend skeleton, including FastAPI app creation, health router, and Click CLI entry point within the `infograph` package.
+- Added CLI startup validation for the backend service and verified health endpoint connectivity.
 ## Getting Started
 
 ### Prerequisites
