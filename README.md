@@ -13,7 +13,7 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-test
+- Added FastAPI backend skeleton with health endpoint and testing setup.
 ## Getting Started
 
 ### Prerequisites
