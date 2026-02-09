@@ -8,7 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Implemented Google OAuth login flow with backend token verification, JWT creation, and frontend auth state management.
+- Added Google OAuth authentication endpoints, logout handling, and JWT issuance via AuthService.
+
 ## Getting Started
 
 ### Prerequisites

@@ -31,4 +31,12 @@ def create_auth_router(auth_service: AuthService) -> APIRouter:
             raise HTTPException(status_code=401, detail="Invalid or expired token") from exc
 
 
+    @router.post("/auth/logout")
+    async def logout(
+        token: HTTPAuthorizationCredentials = Security(bearer),
+    ) -> dict[str, bool]:
+        auth_service.get_user_from_token(token.credentials)
+        return {"success": True}
+
+
     return router
