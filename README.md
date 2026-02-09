@@ -8,14 +8,51 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Backend skeleton with FastAPI service, CORS middleware, and Click CLI entry point
-- `/api/v1/health` endpoint returning status and version information
+- Bootstrap scripts for backend and frontend (`start.sh`, `stop.sh`, logs, PID management, frontend URL output)
+- FastAPI service skeleton with `/api/v1/health` + Click CLI ($python -m infograph.svc.main$)
+
 ## Getting Started
 
 ### Prerequisites
 
-- Python 3.11+ to run the backend service and tests.
-- Node 18+ and npm 10+ for the frontend development server (future work).
+- Python 3.11+: required for backend development and running pytest.
+- Node 18+ & npm 10+: required for frontend development server.
+- Environment variables defined in `.env` files before running services.
+
+### Quick Start
+
+1. Environment variables
+   ```bash
+   cat <<'EOF' > backend/.env
+   GOOGLE_CLIENT_ID=your-google-client-id
+   JWT_SECRET=your-jwt-secret
+   DATABASE_PATH=/workspace/data/duckdb
+   INFOGRAPHIC_PATH=/workspace/data/infographics
+   LOG_LEVEL=info
+   EOF
+
+   cat <<'EOF' > frontend/.env
+   VITE_API_BASE=http://localhost:8000
+   VITE_GOOGLE_CLIENT_ID=your-google-client-id
+   VITE_FRONTEND_PORT=3001
+   EOF
+   ```
+
+2. Bootstrap services
+   ```bash
+   chmod +x ./start.sh ./stop.sh
+   ./start.sh
+   ```
+   - Logs: `./logs/backend.log` & `./logs/frontend.log`
+   - PIDs: `./pids/backend.pid`, `./pids/frontend.pid`
+   - After startup, `start.sh` prints `Frontend available at http://localhost:3001`
+
+3. CLI quick intro
+   ```bash
+   ./start.sh         # start backend and frontend
+   ./stop.sh          # stop running services
+   tail -f logs/*.log # inspect backend/frontend logs
+   ```
 
 ### Backend Setup
 
@@ -63,6 +100,8 @@ VITE_FRONTEND_PORT=3001
 
 ## Testing
 
+### Testing
+
 Backend tests ensure the health endpoint behaves as expected:
 
 ```bash
@@ -70,4 +109,4 @@ cd backend
 pytest tests/test_health_router.py -q
 ```
 
-The suite exercises `infograph.svc.api_service.create_app` and the `/api/v1/health` router to keep the core skeleton stable as features are added.
+`pytest` loads the FastAPI app via `infograph.svc.api_service.create_app` to keep the `/api/v1/health` router verified while features evolve.

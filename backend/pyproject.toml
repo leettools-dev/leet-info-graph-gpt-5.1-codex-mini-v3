@@ -1,0 +1,19 @@
+[project]
+name = "infograph"
+version = "0.1.0"
+description = "Research Infograph Assistant backend service"
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.22.0",
+    "pydantic>=2.8.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.0"
+]
+
+[project.scripts]
+start = "infograph.svc.main:main"
+
+[tool.pytest]
+testpaths = ["tests"]
