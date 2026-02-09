@@ -13,7 +13,10 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-Initial research infograph assistant project setup
+- Feature: Research Infograph Assistant backend skeleton established with health endpoint.
+  - Usage: `python -m infograph.svc.main --port 8000` starts server.
+  - Configuration: Ensure env vars such as `JWT_SECRET` and `DATABASE_PATH` are set before running.
+
 ## Feature: Initial Research Planning
 - Initial planning and branch setup in progress.
 - Starting backend structure inspection.
