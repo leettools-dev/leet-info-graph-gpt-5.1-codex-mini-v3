@@ -13,7 +13,8 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-Backend DuckDB stores for users, sessions, sources, messages, and infographics with abstract interfaces and schema-aligned implementations.
+- Backend skeleton with a health endpoint supporting version metadata
+
 ## Getting Started
 
 ### Prerequisites
