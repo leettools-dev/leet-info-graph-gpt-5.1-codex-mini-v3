@@ -5,4 +5,5 @@ __all__ = [
     "abstract_session_store",
     "abstract_source_store",
     "abstract_infographic_store",
+    "in_memory_user_store",
 ]

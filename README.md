@@ -8,8 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added foundational backend and frontend structure for the Research Infograph Assistant (FastAPI + Vue 3 stack).
-- Documented quick start requirements with environment variables, start/stop scripts, and CLI intro.
+- Implemented Google OAuth login flow with backend token verification, JWT creation, and frontend auth state management.
 ## Getting Started
 
 ### Prerequisites
