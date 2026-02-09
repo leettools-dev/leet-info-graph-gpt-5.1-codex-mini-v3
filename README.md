@@ -13,7 +13,7 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-- Added FastAPI backend skeleton with health endpoint and testing setup.
+Project status: Research Infograph Assistant development initiated. Backend and frontend skeleton tasks are in progress while documentation updates will follow shortly.
 ## Getting Started
 
 ### Prerequisites
