@@ -8,8 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added detailed backend dependency configuration and build system setup in `pyproject.toml` to support FastAPI, DuckDB, Google OAuth, and testing tooling.
-
+- Established the backend skeleton, including FastAPI app creation, health router, and Click CLI entry point within the `infograph` package.
 ## Getting Started
 
 ### Prerequisites
