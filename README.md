@@ -8,7 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added CLI startup validation for the backend service and verified health endpoint connectivity.
+- Added README instructions covering quick start scripts, logs/pids, and backend health check usage.
 ## Getting Started
 
 ### Prerequisites
