@@ -13,7 +13,34 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-Project status: Research Infograph Assistant development initiated. Backend and frontend skeleton tasks are in progress while documentation updates will follow shortly.
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
+- Starting backend structure inspection.
+- Need to build backend FastAPI skeleton.
+- README update for planning
+
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
+- Starting backend structure inspection.
+- Need to build backend FastAPI skeleton.
+
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
+- Starting backend structure inspection.
+- Need to build backend FastAPI skeleton.
+
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
+- Starting backend structure inspection.
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
+- Starting backend structure inspection.
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
+## Feature: Initial Research Planning
+- Initial planning and branch setup in progress.
 ## Getting Started
 
 ### Prerequisites
