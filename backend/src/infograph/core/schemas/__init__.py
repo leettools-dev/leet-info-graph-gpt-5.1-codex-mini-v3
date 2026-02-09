@@ -2,6 +2,7 @@
 
 __all__ = [
     "user",
+    "auth",
     "research_session",
     "source",
     "infographic",
