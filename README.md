@@ -13,8 +13,7 @@ and receive AI-generated infographics wit...
 
 ## Features
 
-- Placeholder entry for inferencing
-
+Initial research infograph assistant project setup
 ## Feature: Initial Research Planning
 - Initial planning and branch setup in progress.
 - Starting backend structure inspection.
