@@ -1,7 +1,7 @@
 ---
 project_name: workspace
-updated_at: 2026-02-09T02:03:04.963857+00:00
-status: done
+updated_at: 2026-02-09T04:57:59.401917+00:00
+status: in_progress
 ---
 
 # Goal Description
@@ -604,18 +604,18 @@ The plan store is the source of truth for planning and execution.
 
 ## Requirements
 
-- [x] Tasks:**
-- [x] Initialize Python package structure under `backend/src/infograph/`
-- [x] Create `main.py` with Click CLI for starting server
-- [x] Create `api_service.py` with FastAPI app, CORS middleware
-- [x] Create `health_router.py` with `/api/v1/health` endpoint
-- [x] Add `pyproject.toml` with dependencies
-- [x] `python -m infograph.svc.main --port 8000` starts the server
-- [x] `GET http://localhost:8000/api/v1/health` returns `{"status": "ok"}`
+- [ ] Tasks:**
+- [ ] Initialize Python package structure under `backend/src/infograph/`
+- [ ] Create `main.py` with Click CLI for starting server
+- [ ] Create `api_service.py` with FastAPI app, CORS middleware
+- [ ] Create `health_router.py` with `/api/v1/health` endpoint
+- [ ] Add `pyproject.toml` with dependencies
+- [ ] `python -m infograph.svc.main --port 8000` starts the server
+- [ ] `GET http://localhost:8000/api/v1/health` returns `{"status": "ok"}`
 
 ## Acceptance Criteria
 
-- [x] All requirements implemented
-- [x] All features have unit tests
-- [x] README.md documents all features
-- [x] All tests pass
+- [ ] All requirements implemented
+- [ ] All features have unit tests
+- [ ] README.md documents all features
+- [ ] All tests pass
