@@ -8,7 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added initial DuckDB-backed stores plus schema-aware fixtures and tests that exercise CRUD flows for users, sessions, sources, messages, and infographics.
+- Implemented Google OAuth authentication flow with JWT issuance and frontend state management.
+
 ## Getting Started
 
 ### Prerequisites
