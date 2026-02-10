@@ -8,8 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Chat and History views now hydrate authentication, coordinate with the session store, and expose research session creation/deletion operations from the UI.
-
+- Added backend session router with auth-aware endpoints and integrated DuckDB stores.
 ## Getting Started
 
 ### Prerequisites
