@@ -8,7 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Bootstrapped the frontend with TailwindCSS, Element Plus, Vue Router, and Pinia to support future auth and navigation flows.
+- Implemented Google OAuth login flow with backend JWT issuance and frontend auth state management.
+
 ## Getting Started
 
 ### Prerequisites
