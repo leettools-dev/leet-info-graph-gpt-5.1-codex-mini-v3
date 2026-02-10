@@ -24,7 +24,10 @@ class DuckDBClient:
     def register_json_adapter(self) -> None:
         if self._json_adapter_registered:
             return
-        duckdb.register_adapter(dict, lambda value: json.dumps(value))
+        register_adapter = getattr(duckdb, "register_adapter", None)
+        if not register_adapter:
+            return
+        register_adapter(dict, lambda value: json.dumps(value))
         self._json_adapter_registered = True
 
     def fetch_one(self, query: str, parameters: Iterable[Any] | None = None) -> dict[str, Any] | None:

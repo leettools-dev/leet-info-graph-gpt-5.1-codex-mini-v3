@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from infograph.core.schemas.infographic import Infographic, InfographicCreate
 from infograph.stores.abstract_infographic_store import AbstractInfographicStore
 from infograph.stores.duckdb.duckdb_client import DuckDBClient
@@ -35,7 +37,7 @@ class InfographicStoreDuckDB(AbstractInfographicStore):
                 infographic.session_id,
                 infographic.image_path,
                 infographic.template_type,
-                infographic.layout_data,
+                json.dumps(infographic.layout_data),
                 infographic.created_at,
             ),
         )
@@ -46,6 +48,8 @@ class InfographicStoreDuckDB(AbstractInfographicStore):
             f"SELECT * FROM {self._TABLE_NAME} WHERE session_id = ?",
             (session_id,),
         )
+        if row and isinstance(row.get("layout_data"), str):
+            row["layout_data"] = json.loads(row["layout_data"])
         return self._row_to_infographic(row)
 
     def list_infographics(self, user_id: str) -> list[Infographic]:
@@ -53,6 +57,9 @@ class InfographicStoreDuckDB(AbstractInfographicStore):
             f"SELECT i.* FROM {self._TABLE_NAME} i JOIN sessions s ON i.session_id = s.session_id WHERE s.user_id = ?",
             (user_id,),
         )
+        for row in rows:
+            if row and isinstance(row.get("layout_data"), str):
+                row["layout_data"] = json.loads(row["layout_data"])
         return [self._row_to_infographic(row) for row in rows if row is not None]
 
     @staticmethod

@@ -8,7 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Provide research session management endpoints with JWT-protected CRUD operations.
+- Chat and History views now hydrate authentication, coordinate with the session store, and expose research session creation/deletion operations from the UI.
+
 ## Getting Started
 
 ### Prerequisites
@@ -94,5 +95,5 @@ VITE_FRONTEND_PORT=3001
 
 ## Testing
 
-- Backend: `cd backend && pytest tests -q`
-- Frontend: `cd frontend && vitest run`
+- Backend: `cd backend && pytest tests`
+- Frontend: `cd frontend && npm run test`
