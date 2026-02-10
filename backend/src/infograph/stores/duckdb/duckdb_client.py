@@ -14,11 +14,18 @@ class DuckDBClient:
         path = Path(db_path)
         path.parent.mkdir(parents=True, exist_ok=True)
         self._conn = duckdb.connect(str(path))
+        self._json_adapter_registered = False
 
     def execute(self, query: str, parameters: Iterable[Any] | None = None) -> duckdb.DuckDBPyConnection:
         if parameters is None:
             return self._conn.execute(query)
         return self._conn.execute(query, parameters)
+
+    def register_json_adapter(self) -> None:
+        if self._json_adapter_registered:
+            return
+        duckdb.register_adapter(dict, lambda value: json.dumps(value))
+        self._json_adapter_registered = True
 
     def fetch_one(self, query: str, parameters: Iterable[Any] | None = None) -> dict[str, Any] | None:
         cursor = self.execute(query, parameters)

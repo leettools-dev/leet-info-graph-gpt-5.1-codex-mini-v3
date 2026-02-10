@@ -8,8 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Full-featured frontend quick start covering environment setup, service bootstrap, and CLI commands.
-
+- Provide research session management endpoints with JWT-protected CRUD operations.
 ## Getting Started
 
 ### Prerequisites
