@@ -8,17 +8,14 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-<<<<<<< HEAD
-- Implemented Google OAuth authentication flow with JWT issuance and frontend state management.
-=======
-- Added Google OAuth authentication endpoints, logout handling, and JWT issuance via AuthService.
->>>>>>> feature/google-auth-backend
-
+- Bootstrapped the frontend with TailwindCSS, Element Plus, Vue Router, and Pinia to support future auth and navigation flows.
 ## Getting Started
 
 ### Prerequisites
 
-- Documented env as above?
+- Node.js and npm (v16+)
+- Python 3.11
+- Environment variables documented in the backend and frontend sections below.
 ### Quick Start
 
 1. Environment variables
@@ -102,12 +99,5 @@ VITE_FRONTEND_PORT=3001
 ## Testing
 
 ### Testing
-
-Backend tests ensure the health endpoint behaves as expected:
-
-```bash
-cd backend
-pytest tests/test_health_router.py -q
-```
-
-`pytest` loads the FastAPI app via `infograph.svc.api_service.create_app` to keep the `/api/v1/health` router verified while features evolve.
+- Backend: `cd backend && pytest tests -q`
+- Frontend: `cd frontend && npm run test`
