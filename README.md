@@ -8,7 +8,7 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Implemented Google OAuth login flow with backend JWT issuance and frontend auth state management.
+- Full-featured frontend quick start covering environment setup, service bootstrap, and CLI commands.
 
 ## Getting Started
 
@@ -21,19 +21,15 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 1. Environment variables
    ```bash
-cat <<'EOF' > backend/.env
 GOOGLE_CLIENT_ID=your-google-client-id
 JWT_SECRET=your-jwt-secret
 DATABASE_PATH=/workspace/data/duckdb
 INFOGRAPHIC_PATH=/workspace/data/infographics
 LOG_LEVEL=info
-EOF
 
-cat <<'EOF' > frontend/.env
 VITE_API_BASE=http://localhost:8000
 VITE_GOOGLE_CLIENT_ID=your-google-client-id
 VITE_FRONTEND_PORT=3001
-EOF
 ```
 
 2. Bootstrap services
@@ -99,6 +95,5 @@ VITE_FRONTEND_PORT=3001
 
 ## Testing
 
-### Testing
 - Backend: `cd backend && pytest tests -q`
-- Frontend: `cd frontend && npm run test`
+- Frontend: `cd frontend && vitest run`
