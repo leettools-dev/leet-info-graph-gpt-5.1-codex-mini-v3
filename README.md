@@ -8,7 +8,8 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added backend session router with auth-aware endpoints and integrated DuckDB stores.
+- Added backend FastAPI service outline for the Research Infograph Assistant.
+
 ## Getting Started
 
 ### Prerequisites
