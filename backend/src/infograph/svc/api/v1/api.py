@@ -12,7 +12,7 @@ from infograph.stores.duckdb import DuckDBClient, SessionStoreDuckDB, UserStoreD
 class ServiceAPIRouter(APIRouter):
     def __init__(self) -> None:
         super().__init__()
-        db_path = os.getenv("DATABASE_PATH", "/workspace/data/duckdb/infograph.db")
+        db_path = os.getenv("DATABASE_PATH", "./data/duckdb/infograph.db")
         client = DuckDBClient(db_path)
         user_store = UserStoreDuckDB(client)
         session_store = SessionStoreDuckDB(client)
