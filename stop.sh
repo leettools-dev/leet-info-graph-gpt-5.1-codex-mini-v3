@@ -1,29 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PIDS_DIR="$ROOT_DIR/pids"
-BACKEND_PID_FILE="$PIDS_DIR/backend.pid"
-FRONTEND_PID_FILE="$PIDS_DIR/frontend.pid"
 
-stop_process() {
-  local pid_file="$1"
-  local label="$2"
-
-  if [[ -f "$pid_file" ]]; then
-    local pid
-    pid=$(<"$pid_file")
-    if [[ -n "$pid" ]] && kill -0 "$pid" >/dev/null 2>&1; then
-      echo "Stopping $label (pid=$pid)..."
-      kill "$pid" >/dev/null 2>&1 || true
-      sleep 0.2
-      kill -0 "$pid" >/dev/null 2>&1 && kill -9 "$pid" >/dev/null 2>&1 || true
-    fi
-    rm -f "$pid_file"
+if [ -f "$PIDS_DIR/backend.pid" ]; then
+  PID=$(cat "$PIDS_DIR/backend.pid") || true
+  if [ -n "$PID" ] && kill -0 "$PID" >/dev/null 2>&1; then
+    echo "Stopping backend $PID"
+    kill "$PID" || true
+    rm -f "$PIDS_DIR/backend.pid"
+  else
+    echo "No running backend found"
+    rm -f "$PIDS_DIR/backend.pid" || true
   fi
-}
-
-stop_process "$BACKEND_PID_FILE" "backend service"
-stop_process "$FRONTEND_PID_FILE" "frontend dev server"
-
-echo "Services stopped."
+else
+  echo "No PID file for backend"
+fi
