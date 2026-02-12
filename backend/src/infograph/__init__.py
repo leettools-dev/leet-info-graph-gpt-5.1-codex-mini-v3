@@ -1,3 +1,2 @@
-"""Infograph backend package."""
-
-__all__ = ["svc"]
+# infograph package
+__version__ = "0.1.0"
