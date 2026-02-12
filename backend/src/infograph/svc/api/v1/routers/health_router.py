@@ -6,4 +6,4 @@ class HealthRouter(APIRouterBase):
 
         @self.get("/", summary="Service health")
         async def health():
-            return {"status": "healthy"}
+            return {"status": "ok", "version": "1.0.0"}
