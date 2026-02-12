@@ -18,8 +18,13 @@ class InfographicService:
 
     def __init__(self, infographic_store: AbstractInfographicStore, output_dir: str | None = None) -> None:
         self._store = infographic_store
-        self._output_dir = output_dir or os.getenv("INFOGRAPHIC_PATH", "/workspace/data/infographics")
-        os.makedirs(self._output_dir, exist_ok=True)
+        import tempfile
+        self._output_dir = output_dir or os.getenv("INFOGRAPHIC_PATH") or tempfile.gettempdir()
+        try:
+            os.makedirs(self._output_dir, exist_ok=True)
+        except OSError:
+            # Environment may be read-only (tests). Fall back to system temp dir.
+            self._output_dir = tempfile.gettempdir()
 
     def generate_basic(self, session_id: str, layout_data: dict) -> str:
         """Generate a basic infographic PNG.
