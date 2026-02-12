@@ -1,6 +1,6 @@
 ---
 task_name: add-google-login-page-and-auth-store
-status: pending
+status: done
 created_at: '2026-02-09T21:24:22Z'
 updated_at: '2026-02-09T21:24:22Z'
 ---
