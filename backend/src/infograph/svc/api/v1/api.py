@@ -6,7 +6,9 @@ from .routers.health_router import router as health_router
 from .routers.auth_router import create_auth_router
 from .routers.session_router import create_session_router
 from infograph.services.auth_service import AuthService
-from infograph.stores.duckdb import DuckDBClient, SessionStoreDuckDB, UserStoreDuckDB
+from infograph.services.infographic_service import InfographicService
+from infograph.stores.duckdb import DuckDBClient, SessionStoreDuckDB, UserStoreDuckDB, InfographicStoreDuckDB
+from infograph.svc.api.v1.routers.infographic_router import create_infographic_router
 
 
 class ServiceAPIRouter(APIRouter):
@@ -27,4 +29,12 @@ class ServiceAPIRouter(APIRouter):
             create_session_router(auth_service, session_store),
             prefix="/api/v1",
             tags=["Sessions"],
+        )
+        # Infographic router and service
+        infographic_store = InfographicStoreDuckDB(client)
+        infographic_service = InfographicService(infographic_store)
+        self.include_router(
+            create_infographic_router(auth_service, infographic_service, infographic_store),
+            prefix="/api/v1",
+            tags=["Infographic"],
         )
