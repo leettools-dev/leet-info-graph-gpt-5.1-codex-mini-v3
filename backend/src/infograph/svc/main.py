@@ -1,19 +1,21 @@
-"""Service CLI entry point."""
-
 import click
 import uvicorn
-
-from .api_service import create_app
-
+import os
 
 @click.command()
-@click.option("--host", default="0.0.0.0", help="Host to bind to")
-@click.option("--port", default=8000, help="Port to bind to")
-def main(host: str, port: int) -> None:
-    """Start the FastAPI backend."""
-    app = create_app()
-    uvicorn.run(app, host=host, port=port)
+@click.option("--port", default=8000, help="Port to run the server on")
+@click.option("--host", default="127.0.0.1", help="Host to bind to")
+@click.option("--reload/--no-reload", default=False, help="Enable autoreload")
+def main(port: int, host: str, reload: bool):
+    """Start the Infograph backend service."""
+    # load env
+    from dotenv import load_dotenv
+    load_dotenv()
 
+    # import app
+    from infograph.svc.api_service import app
+
+    uvicorn.run(app, host=host, port=port, reload=reload)
 
 if __name__ == "__main__":
     main()

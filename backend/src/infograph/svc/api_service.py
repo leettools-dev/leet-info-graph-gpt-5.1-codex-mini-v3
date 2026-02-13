@@ -1,51 +1,36 @@
-import os
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .api.v1.api import ServiceAPIRouter
-
-
-API_VERSION = "1.0.0"
-DEFAULT_ALLOWED_ORIGINS = [
-    "http://localhost:3001",
-    "http://127.0.0.1:3001",
-]
-
-
-def _get_allowed_origins() -> list[str]:
-    env_value = os.getenv("API_CORS_ALLOWED_ORIGINS")
-    if not env_value:
-        return list(DEFAULT_ALLOWED_ORIGINS)
-
-    parsed = [origin.strip() for origin in env_value.split(",") if origin.strip()]
-    return parsed or list(DEFAULT_ALLOWED_ORIGINS)
-
-
 
 def create_app() -> FastAPI:
-    """Create and configure the FastAPI application."""
     app = FastAPI(
         title="Infograph Assistant API",
-        version=API_VERSION,
-        docs_url="/api/v1/docs",
-        redoc_url="/api/v1/redoc",
-        openapi_url="/api/v1/openapi.json",
+        version="0.1.0",
+        docs_url="/api/docs",
+        redoc_url="/api/redoc",
     )
 
+    # CORS - allow localhost origins by default for development
+    origins = ["http://localhost", "http://localhost:3000", "http://localhost:5173"]
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=_get_allowed_origins(),
+        allow_origins=origins,
         allow_credentials=True,
-        allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-        allow_headers=["*"],
+        allow_methods=["*"],
+        allow_headers=["*"]
     )
 
-    @app.get("/", include_in_schema=False)
-    async def root() -> dict[str, str]:
-        return {"status": "running", "version": API_VERSION}
+    # Register routers
+    from infograph.svc.api.v1.api import ServiceAPIRouter
+    api_router = ServiceAPIRouter()
+    app.include_router(api_router, prefix="/api/v1")
 
-    router = ServiceAPIRouter()
-    app.include_router(router)
+    @app.get("/")
+    async def root():
+        return {"status": "ok", "service": "infograph"}
 
     return app
+
+
+# Export a module-level `app` for tools that import the app directly (uvicorn_runner, CLI imports)
+app = create_app()

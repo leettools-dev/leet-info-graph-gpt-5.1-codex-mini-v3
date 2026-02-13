@@ -8,29 +8,28 @@ The Research Infograph Assistant is a full-stack experiment that lets users sign
 
 ## Features
 
-- Added README instructions covering quick start scripts, logs/pids, and backend health check usage.
+- Added backend FastAPI service outline for the Research Infograph Assistant.
+
 ## Getting Started
 
 ### Prerequisites
 
-- Documented env as above?
+- Node.js and npm (v16+)
+- Python 3.11
+- Environment variables documented in the backend and frontend sections below.
 ### Quick Start
 
 1. Environment variables
    ```bash
-cat <<'EOF' > backend/.env
 GOOGLE_CLIENT_ID=your-google-client-id
 JWT_SECRET=your-jwt-secret
 DATABASE_PATH=/workspace/data/duckdb
 INFOGRAPHIC_PATH=/workspace/data/infographics
 LOG_LEVEL=info
-EOF
 
-cat <<'EOF' > frontend/.env
 VITE_API_BASE=http://localhost:8000
 VITE_GOOGLE_CLIENT_ID=your-google-client-id
 VITE_FRONTEND_PORT=3001
-EOF
 ```
 
 2. Bootstrap services
@@ -40,6 +39,7 @@ EOF
    ```
    - Logs: `./logs/backend.log` & `./logs/frontend.log`
    - PIDs: `./pids/backend.pid`, `./pids/frontend.pid`
+   - `start.sh` stops existing processes, runs backend and frontend in background, and writes PID/log files.
    - After startup, `start.sh` prints `Frontend available at http://localhost:3001`
 
 3. CLI quick intro
@@ -95,13 +95,5 @@ VITE_FRONTEND_PORT=3001
 
 ## Testing
 
-### Testing
-
-Backend tests ensure the health endpoint behaves as expected:
-
-```bash
-cd backend
-pytest tests/test_health_router.py -q
-```
-
-`pytest` loads the FastAPI app via `infograph.svc.api_service.create_app` to keep the `/api/v1/health` router verified while features evolve.
+- Backend: `cd backend && pytest tests`
+- Frontend: `cd frontend && npm run test`
