@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Backend for Infograph Assistant"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 fastapi = "^0.95"
 uvicorn = {extras = ["standard"], version = "^0.22"}
 python-jose = "^3.3"
