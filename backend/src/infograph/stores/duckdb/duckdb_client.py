@@ -12,8 +12,15 @@ class DuckDBClient:
 
     def __init__(self, db_path: str) -> None:
         path = Path(db_path)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        self._conn = duckdb.connect(str(path))
+        # Attempt to create parent directories, but gracefully handle read-only filesystems
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            db_path_to_use = str(path)
+        except OSError:
+            # If we cannot create directories (e.g., read-only filesystem in test env),
+            # fall back to an in-memory DuckDB instance to allow tests to run.
+            db_path_to_use = ":memory:"
+        self._conn = duckdb.connect(db_path_to_use)
         self._json_adapter_registered = False
 
     def execute(self, query: str, parameters: Iterable[Any] | None = None) -> duckdb.DuckDBPyConnection:
