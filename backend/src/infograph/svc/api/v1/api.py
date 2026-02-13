@@ -28,4 +28,12 @@ class ServiceAPIRouter(APIRouterBase):
 
         # Auth router
         self.auth_router = create_auth_router(auth_service)
-        super().include_router(self.auth_router, prefix="", tags=["Auth"]) 
+        super().include_router(self.auth_router, prefix="", tags=["Auth"])  
+
+        # Session router
+        from infograph.stores.duckdb.session_store_duckdb import SessionStoreDuckDB
+        from infograph.svc.api.v1.routers.session_router import create_session_router
+
+        session_store = SessionStoreDuckDB(client)
+        self.session_router = create_session_router(auth_service, session_store)
+        super().include_router(self.session_router, prefix="", tags=["Sessions"])
