@@ -1,0 +1,9 @@
+{
+  "command_type": "stop_after_iteration",
+  "payload": {},
+  "command_id": "e7394227-7c8c-4c42-96c2-bd80856c3c5f",
+  "created_at": "2026-02-13T06:19:08.889451+00:00",
+  "processed": false,
+  "processed_at": null,
+  "result": null
+}
