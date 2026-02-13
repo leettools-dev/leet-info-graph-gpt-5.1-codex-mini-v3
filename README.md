@@ -1,8 +1,8 @@
 Research Infograph Assistant
 
 ## Features
-- Backend FastAPI service with health and auth endpoints
 
+- Frontend: Google OAuth login page (LoginPage.vue), Pinia auth store, composable useAuth, router auth guards, and unit tests for auth store.
 ## Quick Start
 Prerequisites:
 - Python 3.11+
