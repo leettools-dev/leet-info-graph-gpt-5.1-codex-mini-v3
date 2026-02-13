@@ -1,6 +1,0 @@
-{"timestamp":"2026-02-09T21:24:22.017915Z","event":"task-initiated","message":"Subtask 'Add Google login page and auth store' initiated (seq 2)","metadata":{"plan_file":"task-google-oauth-login/2-task-add-google-login-page-and-auth-store/plan.add-google-login-page-and-auth-store.md"}}
-{"timestamp":"2026-02-10T02:19:42.468478Z","event":"task-done","message":"Completed subtask via planning tool","metadata":{"source":"leet_task_progress_update"}}
-{"timestamp":"2026-02-10T02:24:36.871759Z","event":"progress-update","message":"Implemented routing and auth guard changes.","metadata":{"source":"leet_task_progress_update"}}
-{"timestamp":"2026-02-10T02:25:11.226186Z","event":"task-done","message":"Completed subtask via planning tool","metadata":{"source":"leet_task_progress_update"}}
-{"timestamp":"2026-02-10T02:26:13.718175Z","event":"progress-update","message":"Added Vitest auth store tests, request utils, and API helpers.","metadata":{"source":"leet_task_progress_update"}}
-{"timestamp":"2026-02-10T02:26:53.761688Z","event":"task-done","message":"Subtask completed: Create LoginPage.vue, auth Pinia store, and useAuth composable.","metadata":{"source":"leet_task_complete"}}
