@@ -32,4 +32,5 @@ def create_app() -> FastAPI:
     return app
 
 
-
+# Export a module-level `app` for tools that import the app directly (uvicorn_runner, CLI imports)
+app = create_app()
