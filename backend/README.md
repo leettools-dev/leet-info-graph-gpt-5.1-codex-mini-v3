@@ -17,9 +17,13 @@ Environment variables (examples):
 - INFOGRAPHIC_PATH - Filesystem path to store generated infographic images
 - LOG_LEVEL - Logging level (info, debug, warn)
 
-Start the backend:
+Start the backend (development):
 
+# Start via helper script (recommended)
 ./start.sh
+
+# Or run directly with the CLI entrypoint
+python -m infograph.svc.main --port 8000
 
 Stop the backend:
 
@@ -31,3 +35,6 @@ API docs available at http://localhost:8000/api/docs
 
 CLI
 - Start server with: python -m infograph.svc.main --port 8000
+
+Health endpoint
+- GET http://localhost:8000/api/v1/health -> {"status": "ok", "version": "1.0.0"}
