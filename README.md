@@ -8,12 +8,9 @@ This project is focused on building the backend and frontend skeletons for a con
 
 ## Features
 
-
-- Minimal FastAPI backend registered under `infograph.svc`, including a Click CLI in `infograph.svc.main` and `python -m infograph.svc.main --port 8000` as the standard entrypoint.
-- Health router exposed at `/api/v1/health` to return `{"status": "ok"}` for system checks alongside a pytest suite that keeps the route guarded.
-- `start.sh` / `stop.sh` scripts that stop prior processes, spawn services in the background, write PID/log files, and expose a quick CLI intro for local development.
-- `docker-compose.yml` that wires backend and frontend services with env_file references so secrets are never hard-coded, providing a standardized `docker compose up --build` experience.
-
+- Full FastAPI backend with Click CLI entrypoint, health check, Google-auth-ready routers, DuckDB-backed stores, and Infographic generator service.
+- Vue 3 + Element Plus frontend featuring Google sign-in, research prompt submission, session history browsing, and auth-aware routing.
+- Quick-start tooling: `start.sh` / `stop.sh`, Docker Compose setup, PID/log management, and detailed README quick start instructions.
 ## Prerequisites
 
 - Python **3.11+** for the backend (install dependencies via `pip install -e backend/.[test]`).

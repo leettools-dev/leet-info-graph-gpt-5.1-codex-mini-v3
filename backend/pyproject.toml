@@ -2,16 +2,20 @@
 name = "infograph-backend"
 version = "0.1.0"
 description = "Backend for Infograph Assistant"
+packages = [{ include = "infograph", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-fastapi = "^0.95"
+fastapi = "^0.116.1"
 uvicorn = {extras = ["standard"], version = "^0.22"}
 python-jose = "^3.3"
 python-dotenv = "^1.0"
 httpx = "^0.24"
 pydantic = "^2.2"
 pytest = {version = "^7.3", optional = true}
+
+[tool.poetry.extras]
+test = ["pytest"]
 
 [build-system]
 requires = ["poetry-core"]
