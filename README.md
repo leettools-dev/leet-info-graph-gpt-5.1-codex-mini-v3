@@ -82,11 +82,9 @@ The FastAPI documentation is available at `/api/v1/docs` (Swagger) and `/api/v1/
 
 ## Testing
 
+## Testing
 
-```bash
-cd backend
-pytest tests/test_health_router.py -q
-```
+- FastAPI: `cd backend && pytest`
 
 ## Configuration
 
