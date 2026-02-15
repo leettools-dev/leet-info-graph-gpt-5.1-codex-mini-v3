@@ -1,9 +1,9 @@
 {
   "state": "build_failed",
   "workspace_path": "/usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3",
-  "message": "docker compose up failed (exit 1)\nstderr:\ntime=\"2026-02-14T18:59:31-08:00\" level=warning msg=\"/usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion\"\nenv file /usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3/frontend/.env not found: stat /usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3/frontend/.env: no such file or directory\n",
-  "last_change_detected": "2026-02-15T02:59:31.815756+00:00",
-  "timestamp": "2026-02-15T02:59:32.009454+00:00",
+  "message": "docker compose up failed (exit 1)\nstderr:\ntime=\"2026-02-15T07:37:36-08:00\" level=warning msg=\"/usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion\"\nenv file /usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3/frontend/.env not found: stat /usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3/frontend/.env: no such file or directory\n",
+  "last_change_detected": "2026-02-15T15:37:36.527107+00:00",
+  "timestamp": "2026-02-15T15:37:37.024576+00:00",
   "services": [],
   "log_file": "/usr/local/leettools/repo/leet-info-graph-gpt-5.1-codex-mini-v3/.leet/run/logs/build.log"
 }
