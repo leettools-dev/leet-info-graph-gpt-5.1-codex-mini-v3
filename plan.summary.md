@@ -1,6 +1,6 @@
 ---
-project_name: leet-info-graph-gpt-5.1-codex-mini-v3
-updated_at: 2026-02-14T09:04:42.237361+00:00
+project_name: workspace
+updated_at: 2026-02-15T01:01:52.320068+00:00
 status: in_progress
 ---
 
@@ -604,11 +604,11 @@ The plan store is the source of truth for planning and execution.
 
 ## Requirements
 
-- [x] Initialize Python package structure under `backend/src/infograph/`
-- [x] Create `main.py` with Click CLI for starting server
-- [x] Create `api_service.py` with FastAPI app, CORS middleware
-- [x] Create `health_router.py` with `/api/v1/health` endpoint
-- [x] Add `pyproject.toml` with dependencies
+- [ ] Initialize Python package structure under `backend/src/infograph/`
+- [ ] Create `main.py` with Click CLI for starting server
+- [ ] Create `api_service.py` with FastAPI app, CORS middleware
+- [ ] Create `health_router.py` with `/api/v1/health` endpoint
+- [ ] Add `pyproject.toml` with dependencies
 - [ ] `python -m infograph.svc.main --port 8000` starts the server
 - [ ] `GET http://localhost:8000/api/v1/health` returns `{"status": "ok"}`
 - [ ] pytest test passes for health endpoint
