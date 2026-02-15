@@ -1,33 +1,18 @@
-[build-system]
-requires = ["setuptools>=67.0.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "infograph"
+[tool.poetry]
+name = "infograph-backend"
 version = "0.1.0"
-description = "Research Infograph Assistant backend service"
-readme = "README.md"
-requires-python = ">=3.11,<4.0"
-dependencies = [
-    "fastapi>=0.110.0",
-    "uvicorn[standard]>=0.22.0",
-    "pydantic>=2.8.0",
-    "python-dotenv>=1.0.0",
-    "click>=8.1.0",
-    "duckdb>=0.9.1",
-    "python-jose[cryptography]>=3.0.1",
-    "google-auth>=2.23.0",
-    "requests>=2.31.0",
-]
+description = "Backend for Infograph Assistant"
 
-[project.optional-dependencies]
-test = [
-    "pytest>=8.3.0",
-    "httpx>=0.27.0",
-]
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.95"
+uvicorn = {extras = ["standard"], version = "^0.22"}
+python-jose = "^3.3"
+python-dotenv = "^1.0"
+httpx = "^0.24"
+pydantic = "^2.2"
+pytest = {version = "^7.3", optional = true}
 
-[project.scripts]
-start = "infograph.svc.main:main"
-
-[tool.pytest]
-testpaths = ["tests"]
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

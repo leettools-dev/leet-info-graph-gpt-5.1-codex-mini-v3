@@ -1,8 +1,9 @@
-from fastapi import APIRouter
+from infograph.svc.api_router_base import APIRouterBase
 
-router = APIRouter()
+class HealthRouter(APIRouterBase):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-
-@router.get("/health")
-async def health_check():
-    return {"status": "ok", "version": "1.0.0"}
+        @self.get("/", summary="Service health")
+        async def health():
+            return {"status": "ok", "version": "1.0.0"}
