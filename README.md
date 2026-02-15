@@ -8,6 +8,7 @@ This project is focused on building the backend and frontend skeletons for a con
 
 ## Features
 
+
 - Minimal FastAPI backend registered under `infograph.svc`, including a Click CLI in `infograph.svc.main` and `python -m infograph.svc.main --port 8000` as the standard entrypoint.
 - Health router exposed at `/api/v1/health` to return `{"status": "ok"}` for system checks alongside a pytest suite that keeps the route guarded.
 - `start.sh` / `stop.sh` scripts that stop prior processes, spawn services in the background, write PID/log files, and expose a quick CLI intro for local development.
@@ -81,12 +82,11 @@ The FastAPI documentation is available at `/api/v1/docs` (Swagger) and `/api/v1/
 
 ## Testing
 
+
 ```bash
 cd backend
 pytest tests/test_health_router.py -q
 ```
-
-Running the health endpoint test ensures `/api/v1/health` remains reachable as the project evolves. For broader coverage, `pytest tests` executes the full suite.
 
 ## Configuration
 
