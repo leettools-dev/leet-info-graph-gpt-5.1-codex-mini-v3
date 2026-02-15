@@ -4,6 +4,9 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PID_FILE="$BASE_DIR/backend.pid"
 LOG_FILE="$BASE_DIR/backend.log"
 
+# Ensure backend package can be imported when running as a module
+export PYTHONPATH="$BASE_DIR/src:$PYTHONPATH"
+
 # Stop old process if exists
 if [ -f "$PID_FILE" ]; then
   OLD_PID=$(cat "$PID_FILE")

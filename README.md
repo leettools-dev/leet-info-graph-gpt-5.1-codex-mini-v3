@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # leet-info-graph-gpt-5.1-codex-mini-v3
 
 > This project is being developed by an autonomous coding agent.
@@ -125,7 +126,21 @@ Once the frontend server is running (by default on port 3001), it will ping the 
 ### Backend
 
 Create `backend/.env` with:
+=======
+Research Infograph Assistant
 
+## Features
+
+- Frontend: Google OAuth login page (LoginPage.vue), Pinia auth store, composable useAuth, router auth guards, and unit tests for auth store.
+- Backend: Minimal FastAPI backend with health endpoint, Click CLI entrypoint, CORS setup, and start/stop scripts.
+
+## Quick Start
+Prerequisites:
+- Python 3.11+
+- Install dev deps: pip install -e backend/
+>>>>>>> dev
+
+Environment variables (backend/.env):
 ```
 GOOGLE_CLIENT_ID=your-google-client-id
 JWT_SECRET=your-jwt-secret
@@ -134,8 +149,12 @@ INFOGRAPHIC_PATH=/workspace/data/infographics
 LOG_LEVEL=info
 ```
 
-### Frontend
+Start services:
+- ./start.sh
+Stop services:
+- ./stop.sh
 
+<<<<<<< HEAD
 Create `frontend/.env` with:
 
 ```
@@ -156,3 +175,9 @@ pytest tests/test_health_router.py -q
 `pytest` loads `infograph.svc.api_service.create_app()` so the `/api/v1/health` route stays validated as other features are added.
 - Backend: `cd backend && pytest tests`
 - Frontend: `cd frontend && npm run test`
+=======
+Frontend URL (if running): http://localhost:3001
+
+CLI:
+- python -m infograph.svc.main --port 8000
+>>>>>>> dev
